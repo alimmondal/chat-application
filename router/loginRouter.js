@@ -5,13 +5,14 @@ const decorateHtmlResponsive = require(
 );
 
 // internal imports
-const { getLogin } = require('../controller/loginController');
+const { getLogin, login } = require('../controller/loginController');
 
 const router = express.Router();
 
 router.get('/', decorateHtmlResponsive('Login'), getLogin);
 
-
+// process login
+router.post("/", login);
 
 module.exports = router;
 
